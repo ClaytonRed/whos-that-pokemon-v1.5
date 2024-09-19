@@ -1,0 +1,68 @@
+const pokemonData = [
+{dex: '1',      name: 'bulbasaur',      type: 'grass/ poison',      image: './media/images/1.png'},
+{dex: '4',      name: 'charmander',     type: 'fire',               image: './media/images/4.png'},
+{dex: '7',      name: 'squirtle',       type: 'water',              image: './media/images/7.png'},
+
+{ dex: '152',   name: 'chikorita',      type: 'grass',              image: './media/images/152.png' },
+{ dex: '155',   name: 'cyndaquil',      type: 'fire',               image: './media/images/155.png' },
+{ dex: '158',   name: 'totodile',       type: 'water',              image: './media/images/158.png' },
+
+{ dex: '252',   name: 'treecko',        type: 'grass',              image: './media/images/252.png' },
+{ dex: '255',   name: 'torchic',        type: 'fire',               image: './media/images/255.png' },
+{ dex: '258',   name: 'mudkip',         type: 'water',              image: './media/images/258.png' },
+
+{ dex: '387',   name: 'turtwig',        type: 'grass',              image: './media/images/387.png' },
+{ dex: '390',   name: 'chimchar',       type: 'fire',               image: './media/images/390.png' },
+{ dex: '393',   name: 'piplup',         type: 'water',              image: './media/images/393.png' },
+
+{ dex: '495',   name: 'snivy',          type: 'grass',              image: './media/images/495.png' },
+{ dex: '498',   name: 'tepig',          type: 'fire',               image: './media/images/498.png' },
+{ dex: '501',   name: 'oshawott',       type: 'water',              image: './media/images/501.png' },
+
+{ dex: '650',   name: 'chespin',        type: 'grass',              image: './media/images/650.png' },
+{ dex: '653',   name: 'fennekin',       type: 'fire',               image: './media/images/653.png' },
+{ dex: '656',   name: 'froakie',        type: 'water',              image: './media/images/656.png' },
+
+{ dex: '722',   name: 'rowlet',         type: 'grass/flying',       image: './media/images/722.png' },
+{ dex: '725',   name: 'litten',         type: 'fire',               image: './media/images/725.png' },
+{ dex: '728',   name: 'popplio',        type: 'water',              image: './media/images/728.png' },
+
+{ dex: '810',   name: 'grookey',        type: 'grass',              image: './media/images/810.png' },
+{ dex: '813',   name: 'scorbunny',      type: 'fire',               image: './media/images/813.png' },
+{ dex: '816',   name: 'sobble',         type: 'water',              image: './media/images/816.png' },
+
+{ dex: '906',   name: 'sprigatito',     type: 'grass',              image: './media/images/906.png' },
+{ dex: '909',   name: 'fuecoco',        type: 'fire',               image: './media/images/909.png' },
+{ dex: '912',   name: 'quaxly',         type: 'water',              image: './media/images/912.png' }
+]  
+
+
+// function SelectPokemon(pokemonData, buttonStates) {
+//     let activeGenerations = []
+
+//     if (buttonStates.gen1ActiveBool) activeGenerations.push(1);
+//     if (buttonStates.gen2ActiveBool) activeGenerations.push(2);
+//     if (buttonStates.gen3ActiveBool) activeGenerations.push(3);
+//     if (buttonStates.gen4ActiveBool) activeGenerations.push(4);
+//     if (buttonStates.gen5ActiveBool) activeGenerations.push(5);
+//     if (buttonStates.gen6ActiveBool) activeGenerations.push(6);
+//     if (buttonStates.gen7ActiveBool) activeGenerations.push(7);
+//     if (buttonStates.gen8ActiveBool) activeGenerations.push(8);
+//     if (buttonStates.gen9ActiveBool) activeGenerations.push(9);
+
+//     let selectedPokemon = pokemonData.filter(pokemon => activeGenerations.includes(pokemon.gen))
+//     console.log(selectedPokemon)
+
+//     return selectedPokemon
+// }
+
+
+// function ToggleGenButton(stateKey, buttonElement) {
+//     buttonStates[stateKey] = !buttonStates[stateKey];
+
+//     if (buttonStates[stateKey]) {
+//         buttonElement.classList.add('btn-pressed');
+//     } else {
+//         buttonElement.classList.remove('btn-pressed');
+//     }
+// }

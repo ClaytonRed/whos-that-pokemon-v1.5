@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>v1.5</title>
+</head>
+<body>
+    <header>
+        <button class="menu-btn">
+            <img src="./media/icons/icons8-settings-96.png" alt="">
+        </button>
+        <h1 class="main-title">Who's That Pokémon?</h1>
+        <button class="menu-btn">
+            <img src="./media/icons/icons8-about-96.png" alt="">
+        </button>
+    </header>
+
+<!-- //////////////////////////////////////// -->
+
+    <div class="start-screen" id="startScreen">
+        <h2 class="">Select the Generations you would like to include:</h2>
+        <div class="gen-container">
+            <button class="gen-btn" id="genBtn1">I</button>
+            <button class="gen-btn" id="genBtn2">II</button>
+            <button class="gen-btn" id="genBtn3">III</button>
+            <button class="gen-btn" id="genBtn4">IV</button>
+            <button class="gen-btn" id="genBtn5">V</button>
+            <button class="gen-btn" id="genBtn6">VI</button>
+            <button class="gen-btn" id="genBtn7">VII</button>
+            <button class="gen-btn" id="genBtn8">VIII</button>
+            <button class="gen-btn" id="genBtn9">IX</button>
+        </div>
+        <h2 class="error-text hidden" id="errorText"></h2>
+        <button class="start-btn" id="startBtn">Start Game!</button>
+    </div>
+
+<!-- //////////////////////////////////////// -->
+
+    <div class="play-screen" id="playScreen">
+        <div class="img-container">
+            <img class="main-image" id="mainImage" src="" alt="">
+        </div>
+        <h2 class="" id="resultDisplay"></h2>
+        <input class="text-input" id="userTextInput" type="text" placeholder="..."/>
+        <h2 class="score-text" id="scoreText" ></h2>
+        <div class="btn-container">
+            <button id="nextBtn">skip</button>
+            <button id="checkBtn" >check</button>
+            <button id="finishBtn">finish</button>
+        </div>
+    </div>
+
+    <!-- <audio id="pokemonCry" src=""></audio> -->
+
+
+<!-- //////////////////////////////////////// -->
+
+    <div class="finish-screen" id="finishScreen">
+        <h2 class="score-text" id="scoreText2" ></h2>
+        <button class="restart-btn" id="restartBtn">Play Again!</button>
+    </div>
+
+<!-- //////////////////////////////////////// -->
+
+    <div class="desktop-screen" id="desktopScreen">
+        <img src="./media/images/54.png" alt="">
+        <h1>Oops! There's currently no desktop view... <br/>Please try again on a mobile device!</h1>
+    </div>
+
+<!-- //////////////////////////////////////// -->
+
+    <footer>
+        <p>footer text</p>
+    </footer>
+
+    <script src="pokemondata.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
