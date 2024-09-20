@@ -133,14 +133,11 @@ function SelectPokemon(pokemonData, buttonStates) {
 
     Object.keys(buttonStates).forEach((key, index) => {
         if (buttonStates[key]) {
-            // The gen number == the index + 1 (since gen1ActiveBool starts with gen 1)
             activeGenerations.push(index + 1);
         }
     });
 
     let selectedPokemon = pokemonData.filter(pokemon => activeGenerations.includes(pokemon.gen));
-    console.log(selectedPokemon);
-
     return selectedPokemon;
 }
 
