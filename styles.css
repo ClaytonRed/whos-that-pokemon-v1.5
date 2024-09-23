@@ -38,11 +38,11 @@ footer {
     justify-content: center;
 }
 
-h2 {
+/* h2 {
     text-align: center;
     width: 80%;
     margin: 10px auto;
-}
+} */
 
 
 /* Screen Styling */
@@ -74,7 +74,7 @@ h2 {
     flex-grow: 1;
 }
 
-.desktop-screen {
+/* .desktop-screen {
     position: fixed;
     top: 0;
     left: 0;
@@ -87,10 +87,16 @@ h2 {
     color: white;
     font-size: 2em;
     z-index: 9999;
-}
+} */
 
 
 /* Start Screen Components */
+.gen-text {
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;    
+}
+
 .gen-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -136,6 +142,12 @@ h2 {
     background-color: #ef4444;
     cursor: pointer;
     /* transition: background-color 0.3s ease; */
+}
+
+.error-text {
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;    
 }
 
 
@@ -212,6 +224,12 @@ h2 {
     text-align: center;
 }
 
+.score-text {
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+}
+
 .btn-container {
     margin: auto;
 }
@@ -231,7 +249,14 @@ h2 {
     background-color: #0056b3;
 }
 
+
 /* Result Display */
+.result-text {
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+}
+
 .resultCorrect {
     font-size: 1.5rem;
     color: #007bff;
@@ -241,6 +266,7 @@ h2 {
     font-size: 1.5rem;
     color: #ff3300;
 }
+
 
 /* Finish Screen Components */
 .restart-btn {
