@@ -164,7 +164,7 @@ function LoadPokemon(selectedPokemon) {
 }
 
 function CheckAnswer(selectedPokemon) {
-    let userAnswer = userTextInput.value.trim().toLowerCase()
+    let userAnswer = userTextInput.value.toLowerCase()
     if (userAnswer === selectedPokemon[currentPokemonIndex].name) {
         resultDisplay.classList.remove("resultIncorrect")
         resultDisplay.classList.add("resultCorrect")

@@ -66,3 +66,20 @@ const pokemonData = [
 //         buttonElement.classList.remove('btn-pressed');
 //     }
 // }
+
+
+
+Tandemaus Maushold Fidough Dachsbun Smoliv Dolliv Arboliva Squawkabilly Nacli Naclstack Garganacl Charcadet Armarouge Ceruledge Tadbulb Bellibolt Wattrel Kilowattrel Maschiff Mabosstiff Shroodle Grafaiai Bramblin Brambleghast Toedscool Toedscruel Klawf Capsakid Scovillain Rellor Rabsca Flittle Espathra Tinkatink Tinkatuff Tinkaton Wiglett Wugtrio Bombirdier Finizen Palafin Varoom Revavroom Cyclizar Orthworm Glimmet Glimmora Greavard Houndstone Flamigo Cetoddle Cetitan Veluza Dondozo Tatsugiri Annihilape Clodsire Farigiraf Dudunsparce Kingambit Great Tusk Scream Tail Brute Bonnet Flutter Mane Slither Wing Sandy Shocks Iron Treads Iron Bundle Iron Hands Iron Jugulis Iron Moth Iron Thorns Frigibax Arctibax Baxcalibur Gimmighoul Gholdengo Wo-Chien Chien-Pao Ting-Lu Chi-Yu Roaring Moon Iron Valiant Koraidon Miraidon Walking Wake Iron Leaves Dipplin Poltchageist Sinistcha Okidogi Munkidori Fezandipiti Ogerpon Archaludon Hydrapple Gouging Fire Raging Bolt Iron Boulder Iron Crown Terapagos Pecharunt
+
+
+    { dex: '924', gen: 9, name: 'Tandemaus', type: 'normal', image: './media/images/924.png', audio: './media/audio/924.mp3' },
+    { dex: '925', gen: 9, name: 'Maushold', type: 'normal', image: './media/images/925.png', audio: './media/audio/925.mp3' },
+    { dex: '926', gen: 9, name: 'Fidough', type: 'fairy', image: './media/images/926.png', audio: './media/audio/926.mp3' },
+    { dex: '927', gen: 9, name: 'Dachsbun', type: 'fairy', image: './media/images/927.png', audio: './media/audio/927.mp3' },
+    { dex: '928', gen: 9, name: 'Smoliv', type: 'grass/normal', image: './media/images/928.png', audio: './media/audio/928.mp3' },
+    { dex: '929', gen: 9, name: 'Dolliv', type: 'grass/normal', image: './media/images/929.png', audio: './media/audio/929.mp3' },
+    { dex: '930', gen: 9, name: 'Arboliva', type: 'grass/normal', image: './media/images/930.png', audio: './media/audio/930.mp3' },
+    { dex: '931', gen: 9, name: 'Squawkabilly', type: 'normal/flying', image: './media/images/931.png', audio: './media/audio/931.mp3' },
+    { dex: '932', gen: 9, name: 'Nacli', type: 'rock/salt', image: './media/images/932.png', audio: './media/audio/932.mp3' },
+    { dex: '933', gen: 9, name: 'Naclstack', type: 'rock/salt', image: './media/images/933.png', audio: './media/audio/933.mp3' },
+    { dex: '934', gen: 9, name: 'Garganacl', type: 'rock', image: './media/images/934.png', audio: './media/audio/934.mp3' },
