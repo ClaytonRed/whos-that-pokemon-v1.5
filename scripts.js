@@ -120,7 +120,7 @@ function StartGame() {
 function FinishGame() {
     screenState = 3
     HandleHiddenClass()
-    scoreText2.innerHTML = `Score: ${score}`
+    scoreText2.innerHTML = `Score: ${score}/ ${roundSizeValue}`
 }
 
 function RestartGame() {
@@ -211,7 +211,7 @@ function NextPokemon() {
 
 function HandleScore(int) {
     score = score + int
-    scoreText.innerHTML = `Score: ${score}`
+    scoreText.innerHTML = `Score: ${score}/ ${roundSizeValue}`
 }
 
 function ShuffleArray(array) {
