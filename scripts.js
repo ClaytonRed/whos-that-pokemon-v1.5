@@ -12,6 +12,8 @@ const genBtn7 = document.getElementById('genBtn7')
 const genBtn8 = document.getElementById('genBtn8')
 const genBtn9 = document.getElementById('genBtn9')
 
+const roundSizeInput = document.getElementById('roundSizeInput')
+
 const startBtn = document.getElementById('startBtn')
 const finishBtn = document.getElementById('finishBtn')
 const restartBtn = document.getElementById('restartBtn')
@@ -61,6 +63,7 @@ let currentPokemonIndex = null
 let selectedPokemon = []
 let usedPokemon = []
 let score = 0
+let roundSizeValue = "all"
 
 // Event Listeners
 startBtn.addEventListener('click', StartGame)
@@ -85,10 +88,8 @@ function checkScreenSize() {
     }
 }
 
-// Run the function on page load
 checkScreenSize();
 
-// Add an event listener to check when the user resizes the screen
 window.addEventListener('resize', checkScreenSize);
 
 
@@ -102,7 +103,11 @@ function StartGame() {
     HideError()
     EnableButtons()
     nextBtn.classList.remove('hidden')
-    selectedPokemon = SelectPokemon(pokemonData, buttonStates)
+
+    roundSizeValue = roundSizeInput.value
+    console.log(roundSizeValue)
+
+    selectedPokemon = SelectPokemon(pokemonData, buttonStates, roundSizeValue)
     if (selectedPokemon.length === 0) {
         ShowError()
         return
@@ -128,7 +133,7 @@ function RestartGame() {
     HandleHiddenClass()
 }
 
-function SelectPokemon(pokemonData, buttonStates) {
+function SelectPokemon(pokemonData, buttonStates, roundSizeValue) {
     let activeGenerations = [];
 
     Object.keys(buttonStates).forEach((key, index) => {
@@ -138,6 +143,22 @@ function SelectPokemon(pokemonData, buttonStates) {
     });
 
     let selectedPokemon = pokemonData.filter(pokemon => activeGenerations.includes(pokemon.gen));
+    console.log(selectedPokemon)
+
+    if (roundSizeValue === "all") {
+        return selectedPokemon;
+    } else {
+        const roundSize = parseInt(roundSizeValue)
+
+        if (!isNaN(roundSize) && roundSize <= selectedPokemon.length) {
+            selectedPokemon = ShuffleArray(selectedPokemon)
+            console.log(selectedPokemon)
+            selectedPokemon = selectedPokemon.slice(0, roundSize);
+        } else {
+            selectedPokemon = selectedPokemon;
+        }
+    }
+    console.log(selectedPokemon)
     return selectedPokemon;
 }
 
@@ -191,6 +212,16 @@ function NextPokemon() {
 function HandleScore(int) {
     score = score + int
     scoreText.innerHTML = `Score: ${score}`
+}
+
+function ShuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1))
+        let temp = array[i]
+        array[i] = array[j]
+        array[j] = temp
+    }
+    return array
 }
 
 function ClearText() {
