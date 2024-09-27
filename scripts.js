@@ -13,7 +13,6 @@ const genBtn8 = document.getElementById('genBtn8')
 const genBtn9 = document.getElementById('genBtn9')
 
 const roundSizeInput = document.getElementById('roundSizeInput')
-
 const startBtn = document.getElementById('startBtn')
 const finishBtn = document.getElementById('finishBtn')
 const restartBtn = document.getElementById('restartBtn')
@@ -27,6 +26,7 @@ const userTextInput = document.getElementById('userTextInput')
 const resultDisplay = document.getElementById('resultDisplay')
 const scoreText = document.getElementById('scoreText')
 const scoreText2 = document.getElementById('scoreText2')
+
 
 // Gen Button Event Listeners
 genBtn1.addEventListener('click', () => ToggleGenButton('gen1ActiveBool', genBtn1))
@@ -65,6 +65,7 @@ let usedPokemon = []
 let score = 0
 let roundSizeValue = "all"
 
+
 // Event Listeners
 startBtn.addEventListener('click', StartGame)
 finishBtn.addEventListener('click', FinishGame)
@@ -79,6 +80,7 @@ userTextInput.addEventListener('keypress', function (e) {
 })
 
 
+// Handle Screen Size
 function checkScreenSize() {
     const overlay = document.getElementById('desktopScreen');
     if (window.innerWidth >= 768) {
@@ -89,10 +91,10 @@ function checkScreenSize() {
 }
 
 checkScreenSize();
-
 window.addEventListener('resize', checkScreenSize);
 
 
+// Functions
 function ToggleGenButton(stateKey, buttonElement) {
     buttonStates[stateKey] = !buttonStates[stateKey];
     buttonElement.classList.toggle('btn-pressed', buttonStates[stateKey]);
@@ -105,7 +107,6 @@ function StartGame() {
     nextBtn.classList.remove('hidden')
 
     roundSizeValue = roundSizeInput.value
-    console.log(roundSizeValue)
 
     selectedPokemon = SelectPokemon(pokemonData, buttonStates, roundSizeValue)
     if (selectedPokemon.length === 0) {
@@ -143,7 +144,6 @@ function SelectPokemon(pokemonData, buttonStates, roundSizeValue) {
     });
 
     let selectedPokemon = pokemonData.filter(pokemon => activeGenerations.includes(pokemon.gen));
-    console.log(selectedPokemon)
 
     if (roundSizeValue === "all") {
         return selectedPokemon;
@@ -152,13 +152,11 @@ function SelectPokemon(pokemonData, buttonStates, roundSizeValue) {
 
         if (!isNaN(roundSize) && roundSize <= selectedPokemon.length) {
             selectedPokemon = ShuffleArray(selectedPokemon)
-            console.log(selectedPokemon)
             selectedPokemon = selectedPokemon.slice(0, roundSize);
         } else {
             selectedPokemon = selectedPokemon;
         }
     }
-    console.log(selectedPokemon)
     return selectedPokemon;
 }
 
@@ -186,16 +184,14 @@ function LoadPokemon(selectedPokemon) {
 
 function CheckAnswer(selectedPokemon) {
     let userAnswer = userTextInput.value.toLowerCase()
-    if (userAnswer === selectedPokemon[currentPokemonIndex].name) {
-        resultDisplay.classList.remove("resultIncorrect")
-        resultDisplay.classList.add("resultCorrect")
-        resultDisplay.innerHTML = `Correct! It's ${selectedPokemon[currentPokemonIndex].name}!`
+    const answerSimilarity = stringSimilarity.compareTwoStrings(userAnswer, selectedPokemon[currentPokemonIndex].name)
+    const leniencyThreshold = HandleThreshold(selectedPokemon)
+    if (answerSimilarity >= leniencyThreshold) {
+        HandleResultText(true)
         HandleScore(1)
     }
     else {
-        resultDisplay.classList.remove("resultCorrect")
-        resultDisplay.classList.add("resultIncorrect")
-        resultDisplay.innerHTML = `Incorrect, It's ${selectedPokemon[currentPokemonIndex].name}!`
+        HandleResultText(false)
         HandleScore(0)
     }
     mainImage.classList.remove("silhouette")
@@ -209,9 +205,38 @@ function NextPokemon() {
     EnableButtons()
 }
 
+function HandleResultText(bool) {
+    if (bool === true) {
+        resultDisplay.classList.remove("resultIncorrect")
+        resultDisplay.classList.add("resultCorrect")
+        resultDisplay.innerHTML = `Correct! It's ${selectedPokemon[currentPokemonIndex].name}!`
+    } else if (bool === false) {
+        resultDisplay.classList.remove("resultCorrect")
+        resultDisplay.classList.add("resultIncorrect")
+        resultDisplay.innerHTML = `Incorrect, It's ${selectedPokemon[currentPokemonIndex].name}!`
+    }
+}
+
 function HandleScore(int) {
     score = score + int
     scoreText.innerHTML = `Score: ${score}/ ${roundSizeValue}`
+}
+
+function HandleThreshold(selectedPokemon) {
+    let nameLength = selectedPokemon[currentPokemonIndex].name.length
+    let leniencyThreshold
+    if (nameLength >= 1 && nameLength <= 4) {
+        leniencyThreshold = 0.3;
+    } else if (nameLength >= 5 && nameLength <= 7) {
+        leniencyThreshold = 0.6;
+    } else if (nameLength >= 8 && nameLength <= 10) {
+        leniencyThreshold = 0.8;
+    } else if (nameLength > 10) {
+        leniencyThreshold = 0.8;
+    } else {
+        leniencyThreshold = 0.8;
+    }
+    return leniencyThreshold
 }
 
 function ShuffleArray(array) {

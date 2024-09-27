@@ -952,7 +952,6 @@ const pokemonData = [
     { dex: '932', gen: 9, name: 'nacli', type: 'rock', image: './media/images/932.png', audio: './media/audio/932.mp3' },
     { dex: '933', gen: 9, name: 'naclstack', type: 'rock', image: './media/images/933.png', audio: './media/audio/933.mp3' },
     { dex: '934', gen: 9, name: 'garganacl', type: 'rock', image: './media/images/934.png', audio: './media/audio/934.mp3' },
-
     { dex: '935', gen: 9, name: 'charcadet', type: 'fire', image: './media/images/935.png', audio: './media/audio/935.mp3' },
     { dex: '936', gen: 9, name: 'armarouge', type: 'fire/psychic', image: './media/images/936.png', audio: './media/audio/936.mp3' },
     { dex: '937', gen: 9, name: 'ceruledge', type: 'fire/ghost', image: './media/images/937.png', audio: './media/audio/937.mp3' },
@@ -1036,6 +1035,8 @@ const pokemonData = [
     { dex: '1015', gen: 9, name: 'munkidori', type: 'poison/psychic', image: './media/images/1015.png', audio: './media/audio/1015.mp3' },
     { dex: '1016', gen: 9, name: 'fezandipiti', type: 'poison/flying', image: './media/images/1016.png', audio: './media/audio/1016.mp3' },
     { dex: '1017', gen: 9, name: 'ogerpon', type: 'grass', image: './media/images/1017.png', audio: './media/audio/1017.mp3' },
+
+// these pokemon have no images/ audio yet
     
     // { dex: '1018', gen: 9, name: 'archaludon', type: 'steel/dragon', image: './media/images/1018.png', audio: './media/audio/1018.mp3' },
     // { dex: '1019', gen: 9, name: 'hydrapple', type: 'grass/dragon', image: './media/images/1019.png', audio: './media/audio/1019.mp3' },
@@ -1045,111 +1046,4 @@ const pokemonData = [
     // { dex: '1023', gen: 9, name: 'iron crown', type: 'steel/psychic', image: './media/images/1023.png', audio: './media/audio/1023.mp3' },
     // { dex: '1024', gen: 9, name: 'terapagos', type: 'normal', image: './media/images/1024.png', audio: './media/audio/1024.mp3' },
     // { dex: '1025', gen: 9, name: 'pecharunt', type: 'poison/ghost', image: './media/images/1025.png', audio: './media/audio/1025.mp3' },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // { dex: '012', gen: 9, name: 'Charcadet', type: 'fire', image: './media/images/012.png', audio: './media/audio/012.mp3' },
-    // { dex: '013', gen: 9, name: 'Armarouge', type: 'fire/psychic', image: './media/images/013.png', audio: './media/audio/013.mp3' },
-    // { dex: '014', gen: 9, name: 'Ceruledge', type: 'fire/ghost', image: './media/images/014.png', audio: './media/audio/014.mp3' },
-    // { dex: '015', gen: 9, name: 'Tadbulb', type: 'electric', image: './media/images/015.png', audio: './media/audio/015.mp3' },
-    // { dex: '016', gen: 9, name: 'Bellibolt', type: 'electric', image: './media/images/016.png', audio: './media/audio/016.mp3' },
-    // { dex: '017', gen: 9, name: 'Wattrel', type: 'electric/flying', image: './media/images/017.png', audio: './media/audio/017.mp3' },
-    // { dex: '018', gen: 9, name: 'Kilowattrel', type: 'electric/flying', image: './media/images/018.png', audio: './media/audio/018.mp3' },
-    // { dex: '019', gen: 9, name: 'Maschiff', type: 'dark', image: './media/images/019.png', audio: './media/audio/019.mp3' },
-    // { dex: '020', gen: 9, name: 'Mabosstiff', type: 'dark', image: './media/images/020.png', audio: './media/audio/020.mp3' },
-    // { dex: '021', gen: 9, name: 'Shroodle', type: 'poison/normal', image: './media/images/021.png', audio: './media/audio/021.mp3' },
-    // { dex: '022', gen: 9, name: 'Grafaiai', type: 'poison/normal', image: './media/images/022.png', audio: './media/audio/022.mp3' },
-    // { dex: '023', gen: 9, name: 'Bramblin', type: 'ghost/grass', image: './media/images/023.png', audio: './media/audio/023.mp3' },
-    // { dex: '024', gen: 9, name: 'Brambleghast', type: 'ghost/grass', image: './media/images/024.png', audio: './media/audio/024.mp3' },
-    // { dex: '025', gen: 9, name: 'Toedscool', type: 'ground/grass', image: './media/images/025.png', audio: './media/audio/025.mp3' },
-    // { dex: '026', gen: 9, name: 'Toedscruel', type: 'ground/grass', image: './media/images/026.png', audio: './media/audio/026.mp3' },
-    // { dex: '027', gen: 9, name: 'Klawf', type: 'rock', image: './media/images/027.png', audio: './media/audio/027.mp3' },
-    // { dex: '028', gen: 9, name: 'Capsakid', type: 'grass', image: './media/images/028.png', audio: './media/audio/028.mp3' },
-    // { dex: '029', gen: 9, name: 'Scovillain', type: 'grass/fire', image: './media/images/029.png', audio: './media/audio/029.mp3' },
-    // { dex: '030', gen: 9, name: 'Rellor', type: 'bug', image: './media/images/030.png', audio: './media/audio/030.mp3' },
-    // { dex: '031', gen: 9, name: 'Rabsca', type: 'bug/psychic', image: './media/images/031.png', audio: './media/audio/031.mp3' },
-    // { dex: '032', gen: 9, name: 'Flittle', type: 'psychic', image: './media/images/032.png', audio: './media/audio/032.mp3' },
-    // { dex: '033', gen: 9, name: 'Espathra', type: 'psychic', image: './media/images/033.png', audio: './media/audio/033.mp3' },
-    // { dex: '034', gen: 9, name: 'Tinkatink', type: 'fairy/steel', image: './media/images/034.png', audio: './media/audio/034.mp3' },
-    // { dex: '035', gen: 9, name: 'Tinkatuff', type: 'fairy/steel', image: './media/images/035.png', audio: './media/audio/035.mp3' },
-    // { dex: '036', gen: 9, name: 'Tinkaton', type: 'fairy/steel', image: './media/images/036.png', audio: './media/audio/036.mp3' },
-    // { dex: '037', gen: 9, name: 'Wiglett', type: 'water/ground', image: './media/images/037.png', audio: './media/audio/037.mp3' },
-    // { dex: '038', gen: 9, name: 'Wugtrio', type: 'water/ground', image: './media/images/038.png', audio: './media/audio/038.mp3' },
-    // { dex: '039', gen: 9, name: 'Bombirdier', type: 'flying/rock', image: './media/images/039.png', audio: './media/audio/039.mp3' },
-    // { dex: '040', gen: 9, name: 'Finizen', type: 'water', image: './media/images/040.png', audio: './media/audio/040.mp3' },
-    // { dex: '041', gen: 9, name: 'Palafin', type: 'water', image: './media/images/041.png', audio: './media/audio/041.mp3' },
-    // { dex: '042', gen: 9, name: 'Varoom', type: 'steel/poison', image: './media/images/042.png', audio: './media/audio/042.mp3' },
-    // { dex: '043', gen: 9, name: 'Revavroom', type: 'steel/poison', image: './media/images/043.png', audio: './media/audio/043.mp3' },
-    // { dex: '044', gen: 9, name: 'Cyclizar', type: 'dragon/normal', image: './media/images/044.png', audio: './media/audio/044.mp3' },
-    // { dex: '045', gen: 9, name: 'Orthworm', type: 'steel/ground', image: './media/images/045.png', audio: './media/audio/045.mp3' },
-    // { dex: '046', gen: 9, name: 'Glimmet', type: 'rock/poison', image: './media/images/046.png', audio: './media/audio/046.mp3' },
-    // { dex: '047', gen: 9, name: 'Glimmora', type: 'rock/poison', image: './media/images/047.png', audio: './media/audio/047.mp3' },
-    // { dex: '048', gen: 9, name: 'Greavard', type: 'ghost', image: './media/images/048.png', audio: './media/audio/048.mp3' },
-    // { dex: '049', gen: 9, name: 'Houndstone', type: 'ghost', image: './media/images/049.png', audio: './media/audio/049.mp3' },
-    // { dex: '050', gen: 9, name: 'Flamigo', type: 'flying/fighting', image: './media/images/050.png', audio: './media/audio/050.mp3' },
-    // { dex: '051', gen: 9, name: 'Cetoddle', type: 'ice', image: './media/images/051.png', audio: './media/audio/051.mp3' },
-    // { dex: '052', gen: 9, name: 'Cetitan', type: 'ice', image: './media/images/052.png', audio: './media/audio/052.mp3' },
-    // { dex: '053', gen: 9, name: 'Veluza', type: 'water/psychic', image: './media/images/053.png', audio: './media/audio/053.mp3' },
-    // { dex: '054', gen: 9, name: 'Dondozo', type: 'water', image: './media/images/054.png', audio: './media/audio/054.mp3' },
-    // { dex: '055', gen: 9, name: 'Tatsugiri', type: 'dragon/water', image: './media/images/055.png', audio: './media/audio/055.mp3' },
-    // { dex: '056', gen: 9, name: 'Annihilape', type: 'fighting/ghost', image: './media/images/056.png', audio: './media/audio/056.mp3' },
-    // { dex: '057', gen: 9, name: 'Clodsire', type: 'ground/water', image: './media/images/057.png', audio: './media/audio/057.mp3' },
-    // { dex: '058', gen: 9, name: 'Farigiraf', type: 'normal/psychic', image: './media/images/058.png', audio: './media/audio/058.mp3' },
-    // { dex: '059', gen: 9, name: 'Dudunsparce', type: 'normal', image: './media/images/059.png', audio: './media/audio/059.mp3' },
-    // { dex: '060', gen: 9, name: 'Kingambit', type: 'dark/steel', image: './media/images/060.png', audio: './media/audio/060.mp3' },
-    // { dex: '061', gen: 9, name: 'Great Tusk', type: 'ground/fighting', image: './media/images/061.png', audio: './media/audio/061.mp3' },
-    // { dex: '062', gen: 9, name: 'Scream Tail', type: 'psychic/fairy', image: './media/images/062.png', audio: './media/audio/062.mp3' },
-    // { dex: '063', gen: 9, name: 'Brute Bonnet', type: 'grass/dark', image: './media/images/063.png', audio: './media/audio/063.mp3' },
-    // { dex: '064', gen: 9, name: 'Flutter Mane', type: 'ghost/fairy', image: './media/images/064.png', audio: './media/audio/064.mp3' },
-    // { dex: '065', gen: 9, name: 'Slither Wing', type: 'bug/fighting', image: './media/images/065.png', audio: './media/audio/065.mp3' },
-    // { dex: '066', gen: 9, name: 'Sandy Shocks', type: 'ground/electric', image: './media/images/066.png', audio: './media/audio/066.mp3' },
-    // { dex: '067', gen: 9, name: 'Iron Treads', type: 'ground/steel', image: './media/images/067.png', audio: './media/audio/067.mp3' },
-    // { dex: '068', gen: 9, name: 'Iron Bundle', type: 'ice/water', image: './media/images/068.png', audio: './media/audio/068.mp3' },
-    // { dex: '069', gen: 9, name: 'Iron Hands', type: 'fighting/electric', image: './media/images/069.png', audio: './media/audio/069.mp3' },
-    // { dex: '070', gen: 9, name: 'Iron Jugulis', type: 'dark/flying', image: './media/images/070.png', audio: './media/audio/070.mp3' },
-    // { dex: '071', gen: 9, name: 'Iron Moth', type: 'fire/bug', image: './media/images/071.png', audio: './media/audio/071.mp3' },
-    // { dex: '072', gen: 9, name: 'Iron Thorns', type: 'rock/electric', image: './media/images/072.png', audio: './media/audio/072.mp3' },
-    // { dex: '073', gen: 9, name: 'Frigibax', type: 'ice', image: './media/images/073.png', audio: './media/audio/073.mp3' },
-    // { dex: '074', gen: 9, name: 'Arctibax', type: 'ice/dragon', image: './media/images/074.png', audio: './media/audio/074.mp3' },
-    // { dex: '075', gen: 9, name: 'Baxcalibur', type: 'ice/dragon', image: './media/images/075.png', audio: './media/audio/075.mp3' },
-    // { dex: '076', gen: 9, name: 'Gimmighoul', type: 'ghost', image: './media/images/076.png', audio: './media/audio/076.mp3' },
-    // { dex: '077', gen: 9, name: 'Gholdengo', type: 'steel/ghost', image: './media/images/077.png', audio: './media/audio/077.mp3' },
-    // { dex: '078', gen: 9, name: 'Wo-Chien', type: 'dark/grass', image: './media/images/078.png', audio: './media/audio/078.mp3' },
-    // { dex: '079', gen: 9, name: 'Chien-Pao', type: 'ice/dark', image: './media/images/079.png', audio: './media/audio/079.mp3' },
-    // { dex: '080', gen: 9, name: 'Ting-Lu', type: 'ground/dark', image: './media/images/080.png', audio: './media/audio/080.mp3' },
-    // { dex: '081', gen: 9, name: 'Chi-Yu', type: 'fire/dark', image: './media/images/081.png', audio: './media/audio/081.mp3' },
-    // { dex: '082', gen: 9, name: 'Roaring Moon', type: 'dragon/dark', image: './media/images/082.png', audio: './media/audio/082.mp3' },
-    // { dex: '083', gen: 9, name: 'Iron Valiant', type: 'fairy/fighting', image: './media/images/083.png', audio: './media/audio/083.mp3' },
-    // { dex: '084', gen: 9, name: 'Koraidon', type: 'dragon/fighting', image: './media/images/084.png', audio: './media/audio/084.mp3' },
-    // { dex: '085', gen: 9, name: 'Miraidon', type: 'dragon/electric', image: './media/images/085.png', audio: './media/audio/085.mp3' },
-    // { dex: '086', gen: 9, name: 'Walking Wake', type: 'water/dragon', image: './media/images/086.png', audio: './media/audio/086.mp3' },
-    // { dex: '087', gen: 9, name: 'Iron Leaves', type: 'grass/psychic', image: './media/images/087.png', audio: './media/audio/087.mp3' },
-    // { dex: '088', gen: 9, name: 'Dipplin', type: 'grass/dragon', image: './media/images/088.png', audio: './media/audio/088.mp3' },
-    // { dex: '089', gen: 9, name: 'Poltchageist', type: 'ghost/grass', image: './media/images/089.png', audio: './media/audio/089.mp3' },
-    // { dex: '090', gen: 9, name: 'Sinistcha', type: 'ghost/grass', image: './media/images/090.png', audio: './media/audio/090.mp3' },
-    // { dex: '091', gen: 9, name: 'Okidogi', type: 'fighting/grass', image: './media/images/091.png', audio: './media/audio/091.mp3' },
-    // { dex: '092', gen: 9, name: 'Munkidori', type: 'grass/poison', image: './media/images/092.png', audio: './media/audio/092.mp3' },
-    // { dex: '093', gen: 9, name: 'Fezandipiti', type: 'flying/psychic', image: './media/images/093.png', audio: './media/audio/093.mp3' },
-    // { dex: '094', gen: 9, name: 'Ogerpon', type: 'grass', image: './media/images/094.png', audio: './media/audio/094.mp3' },
-    // { dex: '095', gen: 9, name: 'Archaludon', type: 'dragon/steel', image: './media/images/095.png', audio: './media/audio/095.mp3' },
-    // { dex: '096', gen: 9, name: 'Hydrapple', type: 'dragon/grass', image: './media/images/096.png', audio: './media/audio/096.mp3' },
-    // { dex: '097', gen: 9, name: 'Gouging Fire', type: 'fire', image: './media/images/097.png', audio: './media/audio/097.mp3' },
-    // { dex: '098', gen: 9, name: 'Raging Bolt', type: 'electric', image: './media/images/098.png', audio: './media/audio/098.mp3' },
-    // { dex: '099', gen: 9, name: 'Iron Boulder', type: 'rock/steel', image: './media/images/099.png', audio: './media/audio/099.mp3' },
-    // { dex: '100', gen: 9, name: 'Iron Crown', type: 'steel/psychic', image: './media/images/100.png', audio: './media/audio/100.mp3' },
-    // { dex: '101', gen: 9, name: 'Terapagos', type: 'dragon', image: './media/images/101.png', audio: './media/audio/101.mp3' },
-    // { dex: '102', gen: 9, name: 'Pecharunt', type: 'grass', image: './media/images/102.png', audio: './media/audio/102.mp3' }
 ];

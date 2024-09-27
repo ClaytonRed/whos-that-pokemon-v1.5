@@ -38,12 +38,6 @@ footer {
     justify-content: center;
 }
 
-/* h2 {
-    text-align: center;
-    width: 80%;
-    margin: 10px auto;
-} */
-
 
 /* Screen Styling */
 .start-screen {
@@ -55,9 +49,6 @@ footer {
 }
 
 .play-screen {
-    /* background-color: rgb(143, 241, 195); */
-    /* background-color: #1E1E1E; */
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -65,8 +56,6 @@ footer {
 }
 
 .finish-screen {
-    /* background-color: coral; */
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -113,7 +102,6 @@ footer {
     font-size: 2rem;
     background-color: #1E1E1E;
     color: #f2f2f2;
-
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -122,7 +110,6 @@ footer {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border: 10px solid #a8a8a8;
-
 }
 
 .gen-container .btn-pressed {
@@ -140,7 +127,6 @@ footer {
     border-radius: 5px;
     background-color: #ef4444;
     cursor: pointer;
-    /* transition: background-color 0.3s ease; */
 }
 
 .error-text {
@@ -160,57 +146,16 @@ footer {
     margin: 0 10px;
 }
 
-/* Generation Colours */
-.gen-btn:nth-child(1).btn-pressed {
-    border-color: #ff0000 #ff0000 #3b4cca #3b4cca;
-}
-
-.gen-btn:nth-child(2).btn-pressed {
-    border-color: #e8c800 #e8c800 #c0b8c8 #c0b8c8;
-}
-
-.gen-btn:nth-child(3).btn-pressed {
-    border-color: #9b0729 #9b0729 #016d94 #016d94;
-}
-
-.gen-btn:nth-child(4).btn-pressed {
-    border-color: #52a1b2 #52a1b2 #e0929f #e0929f;
-}
-
-.gen-btn:nth-child(5).btn-pressed {
-    border-color: #010101 #010101 #dde1e6 #dde1e6;
-}
-
-.gen-btn:nth-child(6).btn-pressed {
-    border-color: #0c6197 #0c6197 #d32649 #d32649;
-}
-
-.gen-btn:nth-child(7).btn-pressed {
-    border-color: #ef810e #ef810e #1c375c #1c375c;
-}
-
-.gen-btn:nth-child(8).btn-pressed {
-    border-color: #f34e86 #f34e86 #2dcbdc #2dcbdc;
-}
-
-.gen-btn:nth-child(9).btn-pressed {
-    border-color: #fd0d35 #fd0d35 #6c38a1 #6c38a1;
-}
-
 
 /* Play Screen Components */
 .img-container {
     background-color: #2f2f2f;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 50%;
     width: 90%;
     margin: auto;
-
-    /* border: 6px solid #2f2f2f; */
     border-radius: 10px;
 }
 
@@ -245,7 +190,6 @@ footer {
 
 .btn-container button {
     font-size: 1.2rem;
-    /* width: 40%; */
     padding: 10px 20px;
     margin: 20px auto;
     border: none;
@@ -293,4 +237,42 @@ footer {
 /* Hidden Class */
 .hidden {
     display: none;
+}
+
+
+/* Generation Colours */
+.gen-btn:nth-child(1).btn-pressed {
+    border-color: #ff0000 #ff0000 #3b4cca #3b4cca;
+}
+
+.gen-btn:nth-child(2).btn-pressed {
+    border-color: #e8c800 #e8c800 #c0b8c8 #c0b8c8;
+}
+
+.gen-btn:nth-child(3).btn-pressed {
+    border-color: #9b0729 #9b0729 #016d94 #016d94;
+}
+
+.gen-btn:nth-child(4).btn-pressed {
+    border-color: #52a1b2 #52a1b2 #e0929f #e0929f;
+}
+
+.gen-btn:nth-child(5).btn-pressed {
+    border-color: #010101 #010101 #dde1e6 #dde1e6;
+}
+
+.gen-btn:nth-child(6).btn-pressed {
+    border-color: #0c6197 #0c6197 #d32649 #d32649;
+}
+
+.gen-btn:nth-child(7).btn-pressed {
+    border-color: #ef810e #ef810e #1c375c #1c375c;
+}
+
+.gen-btn:nth-child(8).btn-pressed {
+    border-color: #f34e86 #f34e86 #2dcbdc #2dcbdc;
+}
+
+.gen-btn:nth-child(9).btn-pressed {
+    border-color: #fd0d35 #fd0d35 #6c38a1 #6c38a1;
 }
