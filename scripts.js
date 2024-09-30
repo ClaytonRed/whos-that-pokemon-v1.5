@@ -16,16 +16,21 @@ const roundSizeInput = document.getElementById('roundSizeInput')
 const startBtn = document.getElementById('startBtn')
 const finishBtn = document.getElementById('finishBtn')
 const restartBtn = document.getElementById('restartBtn')
-
 const nextBtn = document.getElementById('nextBtn')
 const checkBtn = document.getElementById('checkBtn')
+const toggleCluesBtn = document.getElementById('toggleCluesBtn')
+const audioClueBtn = document.getElementById('audioClueBtn')
+const typeClueBtn = document.getElementById('typeClueBtn')
 
+const clueContainer = document.getElementById('clueContainer')
 const errorText = document.getElementById('errorText')
 const mainImage = document.getElementById('mainImage')
 const userTextInput = document.getElementById('userTextInput')
 const resultDisplay = document.getElementById('resultDisplay')
 const scoreText = document.getElementById('scoreText')
 const scoreText2 = document.getElementById('scoreText2')
+const typeClueText = document.getElementById('typeClueText')
+const pokemonCry = document.getElementById('pokemonCry')
 
 
 // Gen Button Event Listeners
@@ -64,6 +69,10 @@ let selectedPokemon = []
 let usedPokemon = []
 let score = 0
 let roundSizeValue = "all"
+let cluesShowingBool = false
+pokemonCry.volume = 0.5
+const vowels = ['a', 'e', 'i', 'o', 'u']
+
 
 
 // Event Listeners
@@ -72,6 +81,10 @@ finishBtn.addEventListener('click', FinishGame)
 restartBtn.addEventListener('click', RestartGame)
 checkBtn.addEventListener('click', () => CheckAnswer(selectedPokemon))
 nextBtn.addEventListener('click', () => NextPokemon())
+
+toggleCluesBtn.addEventListener('click', () => ToggleClues())
+audioClueBtn.addEventListener('click', () => PlayAudio())
+typeClueBtn.addEventListener('click', () => TypeClue())
 
 userTextInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -180,6 +193,7 @@ function ProcessPokemon(selectedPokemon, usedPokemon) {
 function LoadPokemon(selectedPokemon) {
     mainImage.src = selectedPokemon[currentPokemonIndex].image
     mainImage.classList.add('silhouette')
+    pokemonCry.src = selectedPokemon[currentPokemonIndex].audio
 }
 
 function CheckAnswer(selectedPokemon) {
@@ -197,12 +211,63 @@ function CheckAnswer(selectedPokemon) {
     mainImage.classList.remove("silhouette")
     nextBtn.innerHTML = ("next")
     DisableButtons()
+    PlayAudio()
 }
 
 function NextPokemon() {
     ProcessPokemon(selectedPokemon, usedPokemon)
     ClearText()
     EnableButtons()
+}
+
+function ToggleClues() {
+    cluesShowingBool = !cluesShowingBool
+
+    if (cluesShowingBool === true)
+    {
+        ShowClues()
+    }
+    else
+    {
+        HideClues()
+    }    
+}
+
+function ShowClues() {
+    clueContainer.classList.remove("hidden")
+    typeClueBtn.classList.remove("hidden")
+    audioClueBtn.classList.remove("hidden")
+    toggleCluesBtn.innerHTML = ("clues")
+    cluesShowingBool = true
+}
+
+function HideClues() {
+    clueContainer.classList.add("hidden")
+    typeClueBtn.classList.add("hidden")
+    audioClueBtn.classList.add("hidden")
+    toggleCluesBtn.innerHTML = ("clues")
+    cluesShowingBool = false
+}
+
+function TypeClue() {
+    const grammarConnective = HandleGrammar(selectedPokemon[currentPokemonIndex].type)
+    let typeText = `This Pokemon is ${grammarConnective} ${selectedPokemon[currentPokemonIndex].type} type!` 
+
+    typeClueText.innerHTML = typeText
+    typeClueText.classList.remove("hidden")
+}
+
+function HandleGrammar(word) {
+    const firstLetter = word.charAt(0)
+
+    if (vowels.includes(firstLetter))
+        return 'an'
+    else
+        return 'a'
+}
+
+function PlayAudio() {
+    pokemonCry.play()
 }
 
 function HandleResultText(bool) {
@@ -228,13 +293,13 @@ function HandleThreshold(selectedPokemon) {
     if (nameLength >= 1 && nameLength <= 4) {
         leniencyThreshold = 0.3;
     } else if (nameLength >= 5 && nameLength <= 7) {
-        leniencyThreshold = 0.6;
+        leniencyThreshold = 0.5;
     } else if (nameLength >= 8 && nameLength <= 10) {
-        leniencyThreshold = 0.8;
+        leniencyThreshold = 0.6;
     } else if (nameLength > 10) {
-        leniencyThreshold = 0.8;
+        leniencyThreshold = 0.7;
     } else {
-        leniencyThreshold = 0.8;
+        leniencyThreshold = 0.7;
     }
     return leniencyThreshold
 }
@@ -252,17 +317,17 @@ function ShuffleArray(array) {
 function ClearText() {
     userTextInput.value = ""
     resultDisplay.innerHTML = ""
+    typeClueText.innerHTML = ""
+    HideClues()
     userTextInput.focus();
 }
 
 function ShowError(message = "Please select at least one generation.") {
     errorText.textContent = message;
-    errorText.classList.remove('hidden');
 }
 
 function HideError() {
     errorText.textContent = null;
-    errorText.classList.add('hidden');
 }
 
 function HandleHiddenClass() {
