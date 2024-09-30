@@ -82,7 +82,7 @@ footer {
 .gen-text {
     text-align: center;
     width: 80%;
-    margin: 10px auto;    
+    margin: 10px auto;
 }
 
 .gen-container {
@@ -132,18 +132,21 @@ footer {
 .error-text {
     text-align: center;
     width: 80%;
-    margin: 10px auto;    
+    margin: 0 auto;
+    min-height: 60px;
 }
 
 .round-size-container {
+    margin: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 10px;
 }
 
 .round-size-label {
     font-size: 1.2rem;
-    margin: 0 10px;
+    /* margin: 0 10px; */
 }
 
 
@@ -181,11 +184,16 @@ footer {
 .score-text {
     text-align: center;
     width: 80%;
+    min-height: 30px;
     margin: 10px auto;
 }
 
 .btn-container {
     margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .btn-container button {
@@ -198,6 +206,28 @@ footer {
     cursor: pointer;
 }
 
+.clue-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clue-container button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #ef4444;
+    cursor: pointer;
+}
+
+.type-text {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
 .disabledButton {
     background-color: #0056b3;
 }
@@ -206,6 +236,7 @@ footer {
 /* Result Display */
 .result-text {
     text-align: center;
+    min-height: 30px;
     width: 80%;
     margin: 10px auto;
 }

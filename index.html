@@ -34,7 +34,7 @@
             <button class="gen-btn" id="genBtn8">VIII</button>
             <button class="gen-btn" id="genBtn9">IX</button>
         </div>
-        <h2 class="error-text hidden" id="errorText"></h2>
+        <h2 class="error-text" id="errorText"></h2>
 
         <div class="round-size-container">
             <label class="round-size-label" for="roundSize">Round Size?</label>
@@ -62,7 +62,16 @@
             <button id="nextBtn">skip</button>
             <button id="checkBtn" >check</button>
             <button id="finishBtn">finish</button>
+            <button id="toggleCluesBtn">clues</button>
         </div>
+        <div class="clue-container" id="clueContainer">
+            <div class="clue-btn-container">
+                <button id="audioClueBtn" class="hidden">audio</button>
+                <button id="typeClueBtn" class="hidden">type</button>                
+            </div>
+            <h2 class="type-text hidden" id="typeClueText">it's a fire/ dragon type!</h2>
+        </div>
+        <audio id="pokemonCry" src=""></audio>
     </div>
 
 <!-- //////////////////////////////////////// -->
