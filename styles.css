@@ -27,6 +27,12 @@ footer {
     justify-content: center;
 }
 
+footer a img {
+    width: 36px;
+    height: 36px;
+    margin: 4px;
+}
+
 
 /* Screen Styling */
 .start-screen {
