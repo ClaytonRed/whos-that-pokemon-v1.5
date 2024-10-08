@@ -73,12 +73,10 @@ pokemonCry.volume = 0.5
 const vowels = ['a', 'e', 'i', 'o', 'u']
 
 
-
 // Event Listeners
 startBtn.addEventListener('click', StartGame)
 restartBtn.addEventListener('click', RestartGame)
 checkBtn.addEventListener('click', () => CheckAnswer(selectedPokemon))
-
 
 nextBtn.addEventListener('click', () => {
     if (nextBtn.innerHTML === "finish") {
@@ -97,20 +95,6 @@ userTextInput.addEventListener('keypress', function (e) {
         CheckAnswer(selectedPokemon)
     }
 })
-
-
-// Handle Screen Size
-function checkScreenSize() {
-    const overlay = document.getElementById('desktopScreen');
-    if (window.innerWidth >= 768) {
-        overlay.classList.remove('hidden');  // Show the message on large screens
-    } else {
-        overlay.classList.add('hidden');  // Hide the message on mobile screens
-    }
-}
-
-checkScreenSize();
-window.addEventListener('resize', checkScreenSize);
 
 
 // Functions
