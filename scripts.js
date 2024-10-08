@@ -14,7 +14,6 @@ const genBtn9 = document.getElementById('genBtn9')
 
 const roundSizeInput = document.getElementById('roundSizeInput')
 const startBtn = document.getElementById('startBtn')
-const finishBtn = document.getElementById('finishBtn')
 const restartBtn = document.getElementById('restartBtn')
 const nextBtn = document.getElementById('nextBtn')
 const checkBtn = document.getElementById('checkBtn')
@@ -77,10 +76,17 @@ const vowels = ['a', 'e', 'i', 'o', 'u']
 
 // Event Listeners
 startBtn.addEventListener('click', StartGame)
-finishBtn.addEventListener('click', FinishGame)
 restartBtn.addEventListener('click', RestartGame)
 checkBtn.addEventListener('click', () => CheckAnswer(selectedPokemon))
-nextBtn.addEventListener('click', () => NextPokemon())
+
+
+nextBtn.addEventListener('click', () => {
+    if (nextBtn.innerHTML === "finish") {
+        FinishGame();
+    } else {
+        NextPokemon();
+    }
+});
 
 toggleCluesBtn.addEventListener('click', () => ToggleClues())
 audioClueBtn.addEventListener('click', () => PlayAudio())
@@ -129,6 +135,13 @@ function StartGame() {
     ProcessPokemon(selectedPokemon, usedPokemon)
     screenState = 2
     HandleHiddenClass()
+    HandleNextButton('skip')
+
+    if (roundSizeValue === 'all') {
+        scoreText.innerHTML = `Score: ${score}/ ${selectedPokemon.length}`
+    } else {
+        scoreText.innerHTML = `Score: ${score}/ ${roundSizeValue}`
+    } 
 }
 
 function FinishGame() {
@@ -174,12 +187,11 @@ function SelectPokemon(pokemonData, buttonStates, roundSizeValue) {
 }
 
 function ProcessPokemon(selectedPokemon, usedPokemon) {
-    if (usedPokemon.length === selectedPokemon.length - 1) {
-        nextBtn.classList.add('hidden')
-    } else if (usedPokemon.length >= selectedPokemon.length) {
+    if (usedPokemon.length >= selectedPokemon.length) {
         FinishGame()
         return
     }
+
     let randomIndex
     do {
         randomIndex = Math.floor(Math.random() * selectedPokemon.length)
@@ -187,7 +199,6 @@ function ProcessPokemon(selectedPokemon, usedPokemon) {
     currentPokemonIndex = randomIndex
     usedPokemon.push(selectedPokemon[currentPokemonIndex])
     LoadPokemon(selectedPokemon)
-    nextBtn.innerHTML = ("skip")
 }
 
 function LoadPokemon(selectedPokemon) {
@@ -208,8 +219,14 @@ function CheckAnswer(selectedPokemon) {
         HandleResultText(false)
         HandleScore(0)
     }
+
     mainImage.classList.remove("silhouette")
-    nextBtn.innerHTML = ("next")
+
+    if ( usedPokemon.length === selectedPokemon.length) {
+        HandleNextButton('finish')
+    } else {
+        HandleNextButton('next')
+    }
     DisableButtons()
     PlayAudio()
 }
@@ -218,19 +235,23 @@ function NextPokemon() {
     ProcessPokemon(selectedPokemon, usedPokemon)
     ClearText()
     EnableButtons()
+
+    if (usedPokemon.length === selectedPokemon.length) {
+        HandleNextButton('finish')
+    } else {
+        HandleNextButton('skip')
+    }
 }
 
 function ToggleClues() {
     cluesShowingBool = !cluesShowingBool
 
-    if (cluesShowingBool === true)
-    {
+    if (cluesShowingBool === true) {
         ShowClues()
     }
-    else
-    {
+    else {
         HideClues()
-    }    
+    }
 }
 
 function ShowClues() {
@@ -251,7 +272,7 @@ function HideClues() {
 
 function TypeClue() {
     const grammarConnective = HandleGrammar(selectedPokemon[currentPokemonIndex].type)
-    let typeText = `This Pokemon is ${grammarConnective} ${selectedPokemon[currentPokemonIndex].type} type!` 
+    let typeText = `This Pokemon is ${grammarConnective} ${selectedPokemon[currentPokemonIndex].type} type!`
 
     typeClueText.innerHTML = typeText
     typeClueText.classList.remove("hidden")
@@ -268,6 +289,10 @@ function HandleGrammar(word) {
 
 function PlayAudio() {
     pokemonCry.play()
+}
+
+function HandleNextButton(buttonText) {
+    nextBtn.innerHTML = buttonText
 }
 
 function HandleResultText(bool) {

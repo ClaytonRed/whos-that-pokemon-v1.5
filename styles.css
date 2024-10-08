@@ -4,7 +4,8 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -12,24 +13,12 @@ body {
 header {
     background-color: #2f2f2f;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .main-title {
     font-size: 1.5rem;
-    margin: auto;
-}
-
-.menu-btn {
-    background-color: transparent;
-    border: none;
-}
-
-.menu-btn img {
-    width: 36px;
-    height: 36px;
-    margin: 4px;
-    filter: invert(100%);
+    margin: 10px auto;
 }
 
 footer {
@@ -41,7 +30,6 @@ footer {
 
 /* Screen Styling */
 .start-screen {
-    background-color: #1E1E1E;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,7 +39,6 @@ footer {
 .play-screen {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     flex-grow: 1;
 }
 
@@ -89,9 +76,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    background-color: transparent;
     background-color: #2f2f2f;
-    width: 80vw;
+    width: 80%;
     margin: 5% auto;
     border-radius: 20px;
     gap: 20px;
@@ -105,9 +91,8 @@ footer {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-radius: 50px;
+    border-radius: 100%;
     aspect-ratio: 1;
-    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border: 10px solid #a8a8a8;
 }
@@ -119,7 +104,7 @@ footer {
 }
 
 .start-btn {
-    font-size: 1.2rem;
+    font-size: 5vw;
     width: 40%;
     padding: 10px 20px;
     margin: 20px auto;
@@ -127,6 +112,14 @@ footer {
     border-radius: 5px;
     background-color: #ef4444;
     cursor: pointer;
+}
+
+.start-btn:hover {
+    background-color: #dc2626;
+}
+
+.start-btn:active {
+    transform: scale(0.98);
 }
 
 .error-text {
@@ -156,24 +149,32 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50%;
-    width: 90%;
-    margin: auto;
+    margin: 10% auto 20px;
     border-radius: 10px;
+    height: 40vh;
+    width: 90vw;
+    max-width: 600px;
 }
 
 .main-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
 }
 
 .silhouette {
     filter: brightness(0)
 }
 
+.score-text {
+    text-align: center;
+    width: 80%;
+    min-height: 30px;
+    margin: 0 auto 20px;
+}
+
 .text-input {
-    margin: auto;
+    margin: 0 auto 10px;
     font-size: 1rem;
     padding: 5px;
     border: 2px solid #2f2f2f;
@@ -181,25 +182,18 @@ footer {
     text-align: center;
 }
 
-.score-text {
-    text-align: center;
-    width: 80%;
-    min-height: 30px;
-    margin: 10px auto;
-}
-
 .btn-container {
-    margin: auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-evenly;
+    gap: 10px;
 }
 
 .btn-container button {
+    min-width: 90px;
     font-size: 1.2rem;
     padding: 10px 20px;
-    margin: 20px auto;
     border: none;
     border-radius: 5px;
     background-color: #ef4444;
@@ -207,16 +201,21 @@ footer {
 }
 
 .clue-container {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
+.clue-btn-container {
+    display: flex;
+    gap: 10px;
+}
+
 .clue-container button {
+    min-width: 90px;
     font-size: 1.2rem;
     padding: 10px 20px;
-    margin: 20px auto;
     border: none;
     border-radius: 5px;
     background-color: #ef4444;
@@ -225,7 +224,9 @@ footer {
 
 .type-text {
     grid-column: 1 / -1;
+    margin: 20px auto;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .disabledButton {
@@ -238,7 +239,7 @@ footer {
     text-align: center;
     min-height: 30px;
     width: 80%;
-    margin: 10px auto;
+    margin: 0 auto;
 }
 
 .resultCorrect {
@@ -262,6 +263,52 @@ footer {
     border-radius: 5px;
     background-color: #ef4444;
     cursor: pointer;
+}
+
+
+/* Settings Menu Components */
+.settings-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-container {
+    background-color: #2f2f2f;
+    height: 50%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+
+}
+
+.settings-container h1 {
+}
+
+.finish-btn {
+    font-size: 1.2rem;
+    width: 40%;
+    padding: 10px 20px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #ef4444;
+    cursor: pointer;
+}
+
+.close-menu-btn {
+    background-color: transparent;
+    border: none;
 }
 
 
